@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function verified() { return request.auth != null && request.auth.token.email_verified == true; }
+    function self(uid) { return verified() && request.auth.uid == uid; }
+    // Client writes are disabled in this foundation. Server Admin access bypasses
+    // rules and MUST validate identity, ownership, moderation and fields itself.
+    match /users/{uid} {
+      allow read: if self(uid);
+      allow write: if false;
+      match /favourites/{propertyId} {
+        allow read: if self(uid);
+        allow write: if false;
+      }
+    }
+    match /properties/{propertyId} {
+      allow read: if resource.data.status == 'published' || (verified() && resource.data.ownerId == request.auth.uid);
+      allow write: if false;
+    }
+    match /ownerAgents/{uid} {
+      allow read: if self(uid);
+      allow write: if false;
+    }
+    match /enquiries/{enquiryId} {
+      allow read: if verified() && (resource.data.senderId == request.auth.uid || resource.data.recipientId == request.auth.uid);
+      allow write: if false;
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

@@ -1,0 +1,11 @@
+# Firebase App Hosting, not static Firebase Hosting.
+# No project/backend ID is chosen here. Firebase init apphosting must only run
+# after the owner confirms the exact project, billing, region and backend.
+# Set FIREBASE_PROJECT_ID, FIREBASE_API_KEY, FIREBASE_STORAGE_BUCKET and APP_URL
+# in the approved backend's Settings > Environment. Never upload local ADC keys.
+runConfig:
+  minInstances: 0
+  maxInstances: 2
+  concurrency: 40
+  cpu: 1
+  memoryMiB: 1024

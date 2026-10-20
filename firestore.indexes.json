@@ -1,0 +1,12 @@
+{
+  "indexes": [
+    { "collectionGroup": "properties", "queryScope": "COLLECTION", "fields": [ { "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" } ] },
+    { "collectionGroup": "properties", "queryScope": "COLLECTION", "fields": [ { "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "city", "order": "ASCENDING" }, { "fieldPath": "purpose", "order": "ASCENDING" }, { "fieldPath": "price", "order": "ASCENDING" } ] },
+    { "collectionGroup": "properties", "queryScope": "COLLECTION", "fields": [ { "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "city", "order": "ASCENDING" }, { "fieldPath": "purpose", "order": "ASCENDING" }, { "fieldPath": "price", "order": "DESCENDING" } ] },
+    { "collectionGroup": "enquiries", "queryScope": "COLLECTION", "fields": [ { "fieldPath": "recipientId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" } ] }
+  ],
+  "fieldOverrides": [
+    { "collectionGroup": "users", "fieldPath": "mobile", "indexes": [] },
+    { "collectionGroup": "enquiries", "fieldPath": "message", "indexes": [] }
+  ]
+}

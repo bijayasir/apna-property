@@ -1,0 +1,21 @@
+.listing-labels{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:10px}
+.listing-labels .sample-tag{margin-left:0;display:inline-flex}
+.verified-badge{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:5px;background:#edf1f5;color:#263f57;font-size:10px;font-weight:700;border:1px solid #dce4eb}
+.results-controls{margin-bottom:28px;padding:22px;background:#fff;border:1px solid #e3e0da;border-radius:12px;box-shadow:0 4px 16px #17253605}
+.results-toolbar{display:flex;align-items:flex-end;flex-wrap:wrap;gap:14px}
+.results-toolbar label{display:flex;flex:1;min-width:160px;flex-direction:column;gap:8px;font-size:11px;font-weight:700;color:var(--muted)}
+.results-toolbar select{width:100%;height:44px;padding:0 10px;font-size:12px;color:var(--ink);background:#fafaf8;border:1px solid #dcdde0;border-radius:6px}
+.filter-button{min-height:44px;padding:11px 14px;border:1px solid #dcdde0;border-radius:6px;font-size:12px;font-weight:600;white-space:nowrap}
+.filter-button:hover{border-color:var(--accent);color:var(--accent)}
+.filter-button.active{background:var(--accent);color:white;border-color:var(--accent)}
+.filter-summary{font-size:12px;color:var(--ink);line-height:1.8;margin-top:18px}
+.sort-note{font-size:11px;color:var(--muted);line-height:1.7;margin-top:8px}
+.detail-facts{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:20px;background:#f1eee8;border-radius:10px;margin:22px 0}
+.detail-facts dt{font-size:11px;color:var(--muted);margin-bottom:7px}
+.detail-facts dd{font-size:13px;font-weight:600;margin:0;line-height:1.6}
+.modal .detail-heading{font-size:22px;margin-top:24px}
+.detail-amenities{list-style:none;display:flex;flex-wrap:wrap;gap:12px;padding:0;margin:18px 0}
+.detail-amenities li{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}
+.modal .detail-disclaimer{font-size:12px;padding:14px;border-left:3px solid var(--gold);background:#f1eee8}
+@media(max-width:700px){.results-controls{padding:17px}.results-toolbar{gap:12px}.results-toolbar label{min-width:130px}.filter-button{flex:1}.detail-facts{gap:16px;padding:17px}}
+@media(max-width:370px){.results-toolbar label{min-width:100%;flex-basis:100%}.detail-facts{grid-template-columns:1fr}}

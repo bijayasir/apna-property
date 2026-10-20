@@ -1,0 +1,14 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Uploads and private documents are inaccessible through the client SDK.
+    // A future server route will check verified session + listing ownership.
+    match /property-uploads/{path=**} { allow read, write: if false; }
+    // Only a moderation service may promote sanitized images to this prefix.
+    match /published-property-images/{propertyId}/{imageId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /{path=**} { allow read, write: if false; }
+  }
+}
